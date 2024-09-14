@@ -3,9 +3,9 @@
 Plugin Name: Rename WP Media Files Name
 Plugin URI : https://wordpress.org/plugins/wp-media-files-name-rename/
 Description: Change Media Attachments Files Name Easily.
-Version: 1.0.5
+Version: 1.0.7
 Author: Sajjad Hossain Sagor
-Author URI: https://profiles.wordpress.org/sajjad67
+Author URI: https://sajjadhsagor.com
 Text Domain: wp-media-files-name-rename
 Domain Path: /languages
 
@@ -29,8 +29,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // ---------------------------------------------------------
 // Define Plugin Folders Path
 // ---------------------------------------------------------
-define("WPMFNE_PLUGIN_PATH", plugin_dir_path( __FILE__ ));
-define("WPMFNE_PLUGIN_URL", plugin_dir_url( __FILE__ ));
+define( "WPMFNE_PLUGIN_PATH", plugin_dir_path( __FILE__ ) );
+
+define( "WPMFNE_PLUGIN_URL", plugin_dir_url( __FILE__ ) );
 
 // load language translations
 function wpmfne_load_plugin_textdomain()
@@ -65,7 +66,7 @@ add_action( 'admin_head', function()
 		}
 	</style>
 	<?php
-});
+} );
 
 function wpmfne_rename_media_files_init()
 {
@@ -182,7 +183,7 @@ function wpmfne_rename_attachment_media_files_save( $post, $attachment )
 		wp_update_post( array(
 			'ID' => $id,
 			'guid' => $guid
-		));
+		) );
 
 		// Update metadata for that attachment (https://developer.wordpress.org/reference/functions/wp_update_attachment_metadata/)
 		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $new_file ) );

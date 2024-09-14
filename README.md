@@ -3,8 +3,8 @@
 **Contributors:** sajjad67 \
 **Tags:** post,edit-post,attachment,edit-attachment,edit-media-file,edit-file,file \
 **Requires at least:** 5.6 \
-**Tested up to:** 6.0 \
-**Stable tag:** 1.0.5 \
+**Tested up to:** 6.6 \
+**Stable tag:** 1.0.7 \
 **License:** GPLv2 \
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,9 +55,16 @@ Just after installing the plugin, go media uploads list and click one to edit at
 
 ## Changelog
 
+### 1.0.7
+
+- Compatibility check for wp 6.6
+
+### 1.0.6
+
+- Compatibility check for wp 6.3
 ### 1.0.5
 
-- Compatibility check for wp 6.0.
+- Compatibility check for wp 6.0
 ### 1.0.4
 
 - A Major Update.. Added feature when media file name renames it's old thumbnails will also be deleted...

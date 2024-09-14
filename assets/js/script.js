@@ -33,4 +33,4 @@ jQuery( document ).ready( function( $ )
 	{
 		console.log( error.message );
 	}
-});
+} );
