@@ -3,7 +3,7 @@
 [![Plugin Banner](https://ps.w.org/wp-media-files-name-rename/assets/banner-1544x500.png)](https://wordpress.org/plugins/wp-media-files-name-rename/)
 
 **Tags:** post, edit-post, attachment, edit-attachment, edit-media-file, edit-file, file \
-**Tested up to:** 6.9 \
+**Tested up to:** 7.0 \
 **Requires PHP:** 8.0
 
 Change Media Attachments Files Name Easily.
@@ -52,6 +52,9 @@ Just after installing the plugin, go media uploads list and click one to edit at
 ![Media attachments Rename Box.](https://ps.w.org/wp-media-files-name-rename/assets/screenshot-1.png)
 
 ## Changelog
+
+### 2.0.3
+- Compatibility checkup for latest wp version 7.0
 
 ### 2.0.2
 - Checked for latest wp version 6.9

@@ -221,7 +221,7 @@ class Wp_Media_Files_Name_Rename_Admin {
 			WP_Filesystem();
 
 			// Rename the media with new file (https://developer.wordpress.org/reference/functions/wp_filesystem/).
-			$wp_filesystem->move( $original_file_path . $original_file_name, $new_file );
+			$wp_filesystem->move( $original_file_path . $original_file_name, $new_file, true );
 
 			// get _wp_attached_file of this post.
 			$old_wp_attached_file = get_post_meta( $id, '_wp_attached_file', true );
@@ -298,9 +298,9 @@ class Wp_Media_Files_Name_Rename_Admin {
 	/**
 	 * Deletes thumbnail files associated with a given file.
 	 *
-	 * This function retrieves all registered image sizes in WordPress, constructs the file paths for each thumbnail size based on the original
-	 * file's name and path, and then attempts to delete those thumbnail files. It checks if the files exist and are valid images before
-	 * attempting deletion.
+	 * This function retrieves all registered image sizes in WordPress, constructs the file paths for each thumbnail size
+	 * based on the original file's name and path, and then attempts to delete those thumbnail files.
+	 * It checks if the files exist and are valid images before attempting deletion.
 	 *
 	 * @since     2.0.0
 	 * @access    public
@@ -329,9 +329,20 @@ class Wp_Media_Files_Name_Rename_Admin {
 
 		if ( $dynamicaly_generated_thumbnails ) {
 			foreach ( $dynamicaly_generated_thumbnails as $file ) {
-				// check if file exists.
-				if ( file_exists( $file ) && file_is_valid_image( $file ) ) {
-					wp_delete_file( $file );
+				$basename = basename( $file );
+
+				/**
+				 * Match:
+				 * filename-150x150.jpg
+				 * filename-300x200.webp
+				 */
+				$pattern = '/^' . preg_quote( $file_name_excluded_ext, '/' ) . '-\d+x\d+\.(jpg|jpeg|png|gif|webp)$/i';
+
+				if ( preg_match( $pattern, $basename ) ) {
+					// check if file exists.
+					if ( file_is_valid_image( $file ) ) {
+						wp_delete_file( $file );
+					}
 				}
 			}
 		}

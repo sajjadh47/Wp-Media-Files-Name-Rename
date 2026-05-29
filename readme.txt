@@ -2,9 +2,9 @@
 Tags: post, edit-post, attachment, edit-media-file-name
 Contributors: sajjad67
 Author: Sajjad Hossain Sagor
-Tested up to: 6.9
+Tested up to: 7.0
 Requires at least: 5.6
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,8 @@ Just after installing the plugin, go media uploads list and click one to edit at
 1. Media attachments Rename Box.
 
 == Changelog ==
+= 2.0.3 =
+- Compatibility checkup for latest wp version 7.0
 = 2.0.2 =
 - Checked for latest wp version 6.9
 = 2.0.1 =
